@@ -47,9 +47,13 @@
                         <li class="flex items-center gap-2"><i class="text-purple-500 text-base lni lni-database"></i> Database Administrator</li>
                     </ul>
 
-                    <p class="my-10">I’m a passionate and experienced web developer. With a strong background in creating dynamic and user-friendly websites, I thrive on turning ideas into functional and visually appealing digital solutions. Over the years, I have honed my skills in various programming languages, front-end and back-end frameworks, and web development tools. My goal is to craft seamless online experiences that enhance businesses and engage users. I have a set of skills over the years and with the ever changing web technologies, I am eager to learn new skills.</p>
+                    <p class="my-10 text-sm">I’m a passionate and experienced web developer. With a strong background in creating dynamic and user-friendly websites, I thrive on turning ideas into functional and visually appealing digital solutions. Over the years, I have honed my skills in various programming languages, front-end and back-end frameworks, and web development tools. My goal is to craft seamless online experiences that enhance businesses and engage users. I have a set of skills over the years and with the ever changing web technologies, I am eager to learn new skills.</p>
 
-                    <!-- <a href="#contacts" class="bg-purple-500 w-max py-2 px-4 text-white rounded-sm transition-all cursor-pointer hover:bg-purple-700">Get in Touch</a> -->
+                    <div class="flex items-center gap-5">
+                        <a href="#contacts" class="bg-purple-500 w-max py-2 px-4 text-sm text-white rounded-sm transition-all cursor-pointer hover:bg-purple-700 flex items-center gap-2"><i class="lni lni-phone"></i> Get in Touch</a>
+
+                        <div onclick="share()" class="bg-purple-50 w-max py-2 px-4 text-sm text-purple-900 rounded-sm transition-all cursor-pointer hover:bg-purple-200 flex items-center gap-2"><i class="lni lni-share"></i> Share Portfolio</div>
+                    </div>
 
                 </div>
             </div>
@@ -385,6 +389,10 @@
 
                     </ul>
                 </div>
+
+                <p class="mt-10 text-xs font-light">
+                    I'm a versatile web developer specializing in JS, Python, C#, and PHP. Creating Application Programming Interfaces (APIs) is an area of expertise for me. I have hands-on experience in designing and developing RESTful APIs that enable seamless communication between different software applications. I leverage tools and frameworks such as Express JS, Django REST framework, Flask-RESTful, and ASP.NET Web API to create efficient and well-documented APIs that facilitate data exchange, integration, and interoperability.
+                </p>
             </section>
 
             
@@ -427,25 +435,27 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 sm:p-5 mt-10 gap-3 md:gap-8">
 
-                    <a href="https://www.instagram.com/phillip.sikazwe/" class="text-center p-5 bg-slate-800">
-                        <i class="lni lni-instagram text-2xl text-purple-500 pb-5"></i>
+                    <a href="https://www.instagram.com/phillip.sikazwe/" class="text-center p-5 bg-slate-800  group hover:bg-purple-500 transition-all">
+                        <i class="lni lni-instagram text-2xl text-purple-500 pb-5  group-hover:text-white group-hover:scale-150 transition-all"></i>
                         <h2 class="text-sm">phillip.sikazwe</h2>
                     </a>
 
-                    <a href="mailto:phillip7sikazwe@gmail.com" class="text-center p-5 bg-slate-800">
-                        <i class="lni lni-envelope text-2xl text-purple-500 pb-5"></i>
+                    <a href="mailto:phillip7sikazwe@gmail.com" class="text-center p-5 bg-slate-800  group hover:bg-purple-500 transition-all">
+                        <i class="lni lni-envelope text-2xl text-purple-500 pb-5  group-hover:text-white group-hover:scale-150 transition-all"></i>
                         <h2 class="text-sm">phillip7sikazwe@gmail.com</h2>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/phillip-sikazwe-804a60188/" class="text-center p-5 bg-slate-800">
-                        <i class="lni lni-linkedin-original text-2xl text-purple-500 pb-5"></i>
+                    <a href="https://www.linkedin.com/in/phillip-sikazwe-804a60188/" class="text-center p-5 bg-slate-800  group hover:bg-purple-500 transition-all">
+                        <i class="lni lni-linkedin-original text-2xl text-purple-500 pb-5  group-hover:text-white group-hover:scale-150 transition-all"></i>
                         <h2 class="text-sm">Phillip Sikazwe</h2>
                     </a>
 
-                    <div class="text-center p-5 bg-slate-800">
-                        <i class="lni lni-whatsapp text-2xl text-purple-500 pb-5"></i>
-                        <h2 class="text-sm">+260967843005</h2>
-                    </div>
+                    <a href="https://wa.me/+260967843005">
+                        <div class="text-center p-5 bg-slate-800 group hover:bg-purple-500 transition-all">
+                            <i class="lni lni-whatsapp text-2xl text-purple-500 pb-5 group-hover:text-white group-hover:scale-150 transition-all"></i>
+                            <h2 class="text-sm">+260967843005</h2>
+                        </div>
+                    </a>
 
                 </div>
             </section>
@@ -461,5 +471,21 @@
             <a href="https://github.com/psikazwe" class="text-2xl flex items-center gap-2"><i class="lni lni-github-original"></i><span class="text-sm">psikazwe</span></a>
         </div>
     </footer>
+
+    <script>
+        function share() {
+            let url = window.location.origin + window.location.pathname + window.location.search;
+            if (navigator.share) {
+                navigator.share({
+                    url: url,
+                })
+                .then(() => console.log('Link shared successfully!'))
+                .catch((error) => console.error('Error sharing link:', error));
+            } else {
+                navigator.clipboard.writeText(url);
+                alert(`${url} copied to clipboard`);
+            }
+        }
+    </script>
 </body>
 </html>
